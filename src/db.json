@@ -1,22 +1,16 @@
 {
-    "resultCode": 1,
-    "messages": [
-        "Error!"
-    ],
-    "data": {
-        "userId": [
-            {
-                "id": 1101,
-                "login": "steve.jobs@example.com",
-                "password": "password)",
-                "rememberMe": false
-            },
-            {
-                "id": 1102,
-                "login": "google.jobs@example.com",
-                "password": "password)",
-                "rememberMe": true
-            }
-        ]
-    }
+    "userId": [
+        {
+            "id": 1101,
+            "login": "steve.jobs@example.com",
+            "password": "password)",
+            "rememberMe": false
+        },
+        {
+            "id": 1101,
+            "login": "google.jobs@example.com",
+            "password": "password)",
+            "rememberMe": false
+        }
+    ]
 }

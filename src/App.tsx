@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Login from './components/Login.tsx'
-import Profile from './components/Profile.tsx'
+import Login from './components/Login'
+import Profile from './components/Profile'
 import styled from 'styled-components'
 
 const Title = styled.h1`

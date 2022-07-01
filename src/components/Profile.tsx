@@ -1,8 +1,13 @@
+import { Link, useLocation } from 'react-router-dom'
+
 const Profile = () => {
+  const { state } = useLocation()
+  const { login }: any = state
+
   return (
     <>
-      <h1>Profile</h1>
-      <button>Sign out</button>
+      <h1>Здравствуйте, {login}</h1>
+      <Link to='/'>Выйти</Link>
     </>
   )
 }
