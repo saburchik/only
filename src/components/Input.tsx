@@ -1,45 +1,41 @@
 import { FC } from 'react'
-import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import { LoginField } from '../app.interface'
+import { InputProps } from '../types/app.interface'
 
-const Title = styled.h5`
-  width: max-content;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 400;
-`
-
-type InputProps = {
-  register: any
-  errors: any
-  required: any
-  title: string
-  name: string
-  type: string
-}
-
-const Input: FC<InputProps> = ({
-  register,
-  errors,
-  title,
-  name,
-  type,
-  required,
-}) => {
+const Input: FC<InputProps> = ({ register, errors, title, label, type }) => {
   return (
     <label>
       <Title>{title}</Title>
-      <input
-        {...register(name, { required: 'Обязательно поле' })}
-        className='form__input'
+      <InputStyle
+        {...register(label, { required: true })}
+        style={errors[label] ? { border: '1px solid red' } : {}}
         type={type}
       />
-      {errors.name && (
-        <Title style={{ color: 'red' }}>{errors.name.message}</Title>
+      {errors[label] && (
+        <Title style={{ color: 'red', fontSize: '14px' }}>
+          Обязательно поле
+        </Title>
       )}
     </label>
   )
 }
 
 export default Input
+
+const Title = styled.h5`
+  width: max-content;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+`
+
+const InputStyle = styled.input`
+  width: 100%;
+  padding: 20px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background: #f5f5f5;
+`

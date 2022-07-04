@@ -1,32 +1,42 @@
-import './App.css'
+import { FC } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Login from './components/Login'
-import Profile from './components/Profile'
+import './App.css'
 import styled from 'styled-components'
+import Login from './pages/Login'
+import Profile from './pages/Profile'
 
+const App: FC = () => {
+  return (
+    <BrowserRouter>
+      <AppDiv>
+        <Title>Only.</Title>
+        <Wrapper>
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/profile' element={<Profile />} />
+          </Routes>
+        </Wrapper>
+      </AppDiv>
+    </BrowserRouter>
+  )
+}
+
+export default App
+
+const AppDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 const Title = styled.h1`
   font-size: 2em;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   color: #000;
+  padding-top: 2.5rem;
 `
-
-const App = () => {
-  return (
-    <BrowserRouter>
-      <div className='App'>
-        <Title>Only.</Title>
-        <div style={{ height: '100%' }}>
-          <Routes>
-            <Route path='/' element={<Login />} />
-            <Route path='/profile' element={<Profile />} />
-          </Routes>
-        </div>
-        <div />
-      </div>
-    </BrowserRouter>
-  )
-}
-
-export default App
+const Wrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+`

@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1001,
+      "login": "steve.jobs@example.com",
+      "password": "password",
+      "rememberMe": false
+    },
+    {
+      "id": 1002,
+      "login": "google.jobs@example.com",
+      "password": "password",
+      "rememberMe": false
+    }
+  ]
+}
